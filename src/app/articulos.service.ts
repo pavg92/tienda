@@ -18,4 +18,8 @@ export class ArticulosService {
       resolve(Articulos);
     });
   }
+
+  addArti(articulo: Articulo) {
+    Articulos.push(articulo);
+  }
 }
