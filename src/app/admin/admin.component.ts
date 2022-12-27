@@ -66,6 +66,7 @@ export class AdminComponent implements OnInit {
     this.articulo.codigo = 0;
     this.articulo.descrip = '';
     this.articulo.precio = 0;
+    this.articulo.imgURL = '';
     this.disCod =false;
     this.indexArt = -1;
   }

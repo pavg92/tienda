@@ -21,22 +21,27 @@
         
     </div>
     <div class="col">
-        <table class="table table-success table-striped" *ngIf="articulos.length > 0 else noArt">
+        <table class="table text-center" *ngIf="articulos.length > 0 else noArt">
             <thead>
-              <th scope="col">Codigo</th>
-              <th scope="col">Descripcion</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Borrar</th>
-              <th scope="col">Modificar</th>
+              <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Borrar</th>
+                <th scope="col">Modificar</th>
+              </tr>
             </thead>
-            <tr *ngFor="let art of articulos; index as i">
-              <td scope="row">{{ art.codigo }}</td>
-              <td>{{ art.descrip }}</td>
-              <td>${{ art.precio }}</td>
-              <td><button class="btn btn-danger" (click)="borrar(i)">Borrar</button></td>
-              <td><button class="btn btn-info" (click)="seleccionar(art, i)">Modificar</button></td>
-            </tr>
-        </table>
+            <tbody>
+              <tr *ngFor="let art of articulos; index as i">
+                <td scope="row">{{ art.codigo }}</td>
+                <td>{{ art.descrip }}</td>
+                <td>${{ art.precio }}</td>
+                <td><button class="btn btn-danger" (click)="borrar(i)">Borrar</button></td>
+                <td><button class="btn btn-info" (click)="seleccionar(art, i)">Modificar</button></td>
+              </tr>
+            </tbody>
+          </table>
+          
         <ng-template #noArt>
             <h3>No hay articulos</h3>
         </ng-template>
