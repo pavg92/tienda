@@ -1,0 +1,27 @@
+.item {
+    /* width: 100px; */
+    height: 45vh;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.item img {
+    width: 100%;
+    height: 60%;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.item:hover {
+  -webkit-transform:scale(1.1);
+  transform:scale(1.1);
+  border: 2px solid rgb(255, 152, 0);
+}
+.item {
+  overflow:hidden;
+  transition:all .5s ease-in-out;
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+<div class="row mt-3">
+    <div class="col-4">
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Codigo</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Descipcion</label>
+              <input type="text" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Precio</label>
+              <input type="text" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button class="btn btn-success" (click)="agregar()">Agregar</button>
+            <button class="btn btn-success" (click)="modificar()">Modificar</button><br><br>
+          </form>
+    </div>
+    <div class="col">
+        <table border="2" *ngIf="articulos.length > 0 else noArt">
+            <thead>
+              <th>Codigo</th>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th>Borrar</th>
+              <th>Modificar</th>
+            </thead>
+            <tr *ngFor="let art of articulos; index as i">
+              <td>{{ art.codigo }}</td>
+              <td>{{ art.descrip }}</td>
+              <td>${{ art.precio }}</td>
+              <td><button (click)="borrar(i)">Borrar</button></td>
+              <td><button (click)="seleccionar(art, i)">Modificar</button></td>
+            </tr>
+          </table>
+          <ng-template #noArt>
+            <h3>No hay articulos</h3>
+          </ng-template>
+    </div>
+</div>
